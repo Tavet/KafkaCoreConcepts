@@ -18,3 +18,25 @@ I extracted it under ```/home/breyner/.libraries/kafka_2.13-3.1.0``` folder
     4. Edit Kafka config. In ```config/server.properties``` edit ```log.dirs=/home/breyner/.libraries/kafka_2.13-3.1.0/data/kafka```
 
 3. Start Zookeeper & Kafka. Ensure both of them are binding to a port and running.
+
+    1. Move to the binaries root folder. ```cd /home/breyner/.libraries/kafka_2.13-3.1.0``` 
+    2. Start Zookeeper ```zookeeper-server-start.sh config/zookeeper.properties```
+    2. Start Kafka Broker ```kafka-server-start.sh config/server.properties```
+
+## Useful commands
+
+### Kafka Topics
+
+#### List topics in a broker
+```kafka-topics.sh --bootstrap-server localhost:9092 --list```
+
+#### Create a topic
+You can specify the leader broker, replicas and number of partitions.
+
+```kafka-topics.sh --create --topic first_topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4```
+
+#### Describe a topic
+```kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe```
+
+#### Delete a topic
+```kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --delete```
