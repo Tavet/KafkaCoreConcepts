@@ -1,14 +1,16 @@
 package com.github.tavet.kafka;
 
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
 public class Producer {
     public static void main(String[] args) {
+
+        Logger logger = LoggerFactory.getLogger(Producer.class);
 
         // List of properties https://kafka.apache.org/documentation/#producerconfigs
         // Producer properties
@@ -20,7 +22,15 @@ public class Producer {
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
         // async
-        producer.send(new ProducerRecord<>("first_topic", "test from Java"));
+        for (int i = 0; i < 100; i++) {
+            producer.send(new ProducerRecord<>("first_topic", "test from Java " + i), (metadata, exception) -> {
+                if (exception == null) {
+                    logger.info("Metadata: " + metadata.timestamp());
+                } else {
+                    logger.error("Error: ", exception);
+                }
+            });
+        }
 
         producer.flush();
         producer.close();
