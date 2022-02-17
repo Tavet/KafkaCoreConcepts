@@ -32,7 +32,7 @@ I extracted it under ```/home/breyner/.libraries/kafka_2.13-3.1.0``` folder
 #### Create a topic
 You can specify the leader broker, replicas and number of partitions.
 
-```kafka-topics.sh --create --topic first_topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4```
+```kafka-topics.sh --create --topic first_topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3```
 
 #### Describe a topic
 ```kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe```
