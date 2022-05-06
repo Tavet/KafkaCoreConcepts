@@ -5,6 +5,7 @@ This is a repository where I log my progress in in-depth practice in Kafka.
 1. [**Wikimedia**](https://github.com/Tavet/KafkaCoreConcepts/tree/main/wikimedia) The purpose of this project is to gain experience in Kafka Connect SSE, Kafka Streams, and Kafka Connect ElasticSearch by using the [Stream endpoints of wikimedia](https://stream.wikimedia.org/?doc).
    1. Demo: [https://esjewett.github.io/wm-eventsource-demo/](https://esjewett.github.io/wm-eventsource-demo/)
    2. Demo: [https://codepen.io/Krinkle/pen/BwEKgW?editors=1010](https://codepen.io/Krinkle/pen/BwEKgW?editors=1010)
+   3. Create a Kafka topic: ```kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --create --topic wikimedia.recentchange --partitions 3 --replication-factor 1```
 
 ## Installation on Linux
 Download the binaries from the official Apache Kafka webpage & extract wherever it is most convenient.
