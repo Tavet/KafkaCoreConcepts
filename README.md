@@ -1,5 +1,5 @@
 # Kafka Core Concepts
-This is a project where I am practicing the basics of Kafka.
+This is a repository where I log my progress in in-depth practice in Kafka.
 
 ## Installation on Linux
 Download the binaries from the official Apache Kafka webpage & extract wherever it is most convenient.
