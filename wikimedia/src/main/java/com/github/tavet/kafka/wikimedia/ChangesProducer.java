@@ -23,6 +23,11 @@ public class ChangesProducer {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
+        // High throughput
+        properties.setProperty(ProducerConfig.LINGER_MS_CONFIG, "20"); // 20 ms
+        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32*1024)); // 32 kb
+        properties.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
+
         // Producer
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         EventHandler eventHandler = new ChangeHandler(producer, topic);
