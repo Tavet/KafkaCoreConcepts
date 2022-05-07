@@ -25,7 +25,7 @@ public class ChangesProducer {
 
         // High throughput
         properties.setProperty(ProducerConfig.LINGER_MS_CONFIG, "20"); // 20 ms
-        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32*1024)); // 32 kb
+        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32 * 1024)); // 32 kb
         properties.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
 
         // Producer
