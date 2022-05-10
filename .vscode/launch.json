@@ -1,0 +1,55 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Consumer",
+            "request": "launch",
+            "mainClass": "com.github.tavet.kafka.Consumer",
+            "projectName": "kafka-course"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConsumerWithShotdown",
+            "request": "launch",
+            "mainClass": "com.github.tavet.kafka.ConsumerWithShotdown",
+            "projectName": "kafka-course"
+        },
+        {
+            "type": "java",
+            "name": "Launch Producer",
+            "request": "launch",
+            "mainClass": "com.github.tavet.kafka.Producer",
+            "projectName": "kafka-course"
+        },
+        {
+            "type": "java",
+            "name": "Launch Consumer(1)",
+            "request": "launch",
+            "mainClass": "com.github.tavet.kafka.opensearch.Consumer",
+            "projectName": "opensearch"
+        },
+        {
+            "type": "java",
+            "name": "Launch ChangesProducer",
+            "request": "launch",
+            "mainClass": "com.github.tavet.kafka.wikimedia.ChangesProducer",
+            "projectName": "wikimedia"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Compound",
+            "configurations": ["Launch Consumer(1)", "Launch ChangesProducer"]
+        }
+    ]
+}

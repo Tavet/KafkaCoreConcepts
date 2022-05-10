@@ -6,7 +6,8 @@ This is a repository where I log my progress in in-depth practice in Kafka.
    1. Demo: [https://esjewett.github.io/wm-eventsource-demo/](https://esjewett.github.io/wm-eventsource-demo/)
    2. Demo: [https://codepen.io/Krinkle/pen/BwEKgW?editors=1010](https://codepen.io/Krinkle/pen/BwEKgW?editors=1010)
    3. Create a Kafka topic: ```kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --create --topic wikimedia.recentchange --partitions 3 --replication-factor 1```
-
+2. [**Opensearch**](https://github.com/Tavet/KafkaCoreConcepts/tree/main/opensearch) Kafka Consumer to consume the Wikimedia data producer + Opensearch.
+   
 ## Installation on Linux
 Download the binaries from the official Apache Kafka webpage & extract wherever it is most convenient.
 I extracted it under ```/home/breyner/.libraries/kafka_2.13-3.1.0``` folder

@@ -1,6 +1,7 @@
 package com.github.tavet.kafka.wikimedia;
 
 import java.net.URI;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +15,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 public class ChangesProducer {
 
     public static void main(String[] args) throws InterruptedException {
+        Thread.sleep(20000);
         final String bootstrapServers = "127.0.0.1:9092";
         final String topic = "wikimedia.recentchange";
         final String url = "https://stream.wikimedia.org/v2/stream/recentchange";
